@@ -6,9 +6,9 @@ export default class Personagem {
   static tipo;
   static descricao;
 
-  constructor(nome, level, tipo, descricao) {
+  constructor(nome, tipo, descricao) {
     this.nome = nome;
-    this.#level = level;
+    this.#level = 1;
     this.tipo = tipo;
     this.descricao = descricao;
   }
