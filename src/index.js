@@ -1,4 +1,5 @@
 import Personagem from "../src/modules/Personagem.js";
+import Mago from "../src/modules/Mago.js";
 import PersonagemView from "../src/components/personagem-view.js";
 
 const personagemPedrinho = new Personagem("Pedrinho", 7, 12, 5, "Mago");
@@ -17,3 +18,5 @@ console.log(`Insígnia de ` + personagemJose.nome + `: ` + personagemJose.obterI
 const personagensExibidosNaTela = [personagemPedrinho, personagemJose, personagemFelipe];
 
 new PersonagemView(personagensExibidosNaTela).render();
+
+console.log(new Mago("gelo", 7, 9));
