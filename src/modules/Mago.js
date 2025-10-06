@@ -5,9 +5,10 @@ export default class Mago extends Personagem {
   levelMagico;
   inteligencia;
   static tipo = "Mago";
+  static descricao = "O mago é implacável!";
 
   constructor(nome, level, elementoMagico, levelMagico, inteligencia) {
-    super(nome, level, Mago.tipo);
+    super(nome, level, Mago.tipo, Mago.descricao);
     this.elementoMagico = elementoMagico;
     this.levelMagico = levelMagico;
     this.inteligencia = inteligencia;
