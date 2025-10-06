@@ -1,15 +1,13 @@
 export default class Personagem {
   nome;
-  vida;
-  mana;
+  vida = 100;
+  mana = 100;
   level;
   tipo;
   descricao;
 
-  constructor(nome, vida, mana, level, tipo, descricao) {
+  constructor(nome, level, tipo, descricao) {
     this.nome = nome;
-    this.vida = 100;
-    this.mana = 100;
     this.level = level;
     this.tipo = tipo;
     this.descricao = descricao;

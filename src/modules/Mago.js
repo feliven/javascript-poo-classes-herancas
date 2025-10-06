@@ -1,11 +1,22 @@
-export default class Mago {
+import Personagem from "./Personagem.js";
+
+export default class Mago extends Personagem {
   elementoMagico;
   levelMagico;
   inteligencia;
+  tipo = "Mago";
 
-  constructor(elementoMagico, levelMagico, inteligencia) {
+  constructor(nome, level, elementoMagico, levelMagico, inteligencia) {
+    super(nome, level, "Mago");
     this.elementoMagico = elementoMagico;
     this.levelMagico = levelMagico;
     this.inteligencia = inteligencia;
+  }
+
+  obterInsignia() {
+    if (this.levelMagico >= 5 && this.inteligencia >= 5) {
+      return `Mestre do ${this.elementoMagico}`;
+    }
+    return super.obterInsignia();
   }
 }
