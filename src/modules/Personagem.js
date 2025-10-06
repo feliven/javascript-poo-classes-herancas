@@ -13,6 +13,21 @@ export default class Personagem {
     this.descricao = descricao;
   }
 
+  aumentarLevel() {
+    this.level += 1;
+    // Para chamarmos o método set level(), a chamada precisa ter o mesmo nome da função — ou seja, level - por isso retiramos o sinal # dos métodos.
+  }
+
+  diminuirLevel() {
+    this.level -= 1;
+  }
+
+  set level(novoLevel) {
+    if (novoLevel >= 1 && novoLevel <= 10) {
+      this.#level = novoLevel;
+    }
+  }
+
   get level() {
     return this.#level;
   }
