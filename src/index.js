@@ -1,4 +1,4 @@
-// import Personagem from "../src/modules/Personagem.js";
+import Personagem from "../src/modules/Personagem.js";
 import Mago from "../src/modules/Mago.js";
 import Arqueiro from "../src/modules/Arqueiro.js";
 import ArqueiroEMago from "./modules/ArqueiroEMago.js";
@@ -37,3 +37,5 @@ const personagensExibidosNaTela = [
 ];
 
 new PersonagemView(personagensExibidosNaTela).render();
+
+console.log(Personagem.verificarVencedor(arqueiroBruno, arqueiroMagoThiago));
