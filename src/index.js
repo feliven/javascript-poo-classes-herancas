@@ -2,6 +2,7 @@ import Personagem from "../src/modules/Personagem.js";
 import Mago from "../src/modules/Mago.js";
 import Arqueiro from "../src/modules/Arqueiro.js";
 import ArqueiroEMago from "./modules/ArqueiroEMago.js";
+import Guerreiro from "./modules/Guerreiro.js";
 import PersonagemView from "../src/components/personagem-view.js";
 
 // const personagemPedrinho = new Personagem("Pedrinho", 5, "Mago");
@@ -16,17 +17,21 @@ const arqueiroBruno = new Arqueiro("Bruno", 7, 8);
 
 const arqueiroMagoThiago = new ArqueiroEMago("Thiago", 3, 3, "ar", 4, 4);
 
+const guerreiroJoao = new Guerreiro("João", 6);
+
 console.log(personagemPedrinho);
 console.log(personagemJose);
 console.log(personagemFelipe);
 console.log(arqueiroBruno);
 console.log(arqueiroMagoThiago);
+console.log(guerreiroJoao);
 
 console.log(`Insígnia de ` + personagemPedrinho.nome + `: ` + personagemPedrinho.obterInsignia());
 console.log(`Insígnia de ` + personagemJose.nome + `: ` + personagemJose.obterInsignia());
 console.log(`Insígnia de ` + personagemFelipe.nome + `: ` + personagemFelipe.obterInsignia());
 console.log(`Insígnia de ` + arqueiroBruno.nome + `: ` + arqueiroBruno.obterInsignia());
 console.log(`Insígnia de ` + arqueiroMagoThiago.nome + `: ` + arqueiroMagoThiago.obterInsignia());
+console.log(`Insígnia de ` + guerreiroJoao.nome + `: ` + guerreiroJoao.obterInsignia());
 
 const personagensExibidosNaTela = [
   personagemPedrinho,
@@ -34,8 +39,7 @@ const personagensExibidosNaTela = [
   personagemFelipe,
   arqueiroBruno,
   arqueiroMagoThiago,
+  guerreiroJoao,
 ];
 
 new PersonagemView(personagensExibidosNaTela).render();
-
-console.log(Personagem.verificarVencedor(arqueiroBruno, arqueiroMagoThiago));
