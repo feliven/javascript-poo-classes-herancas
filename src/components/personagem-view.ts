@@ -2,8 +2,9 @@ import Personagem from "../modules/Personagem.js";
 import { mostrarModal } from "./modal.js";
 
 export default class PersonagemView {
-  personagensExibidosNaTela;
-  personagensSelecionados;
+  personagensExibidosNaTela: Personagem[];
+  personagensSelecionados: Personagem[];
+  ulPersonagens: HTMLUListElement;
 
   constructor(personagensExibidosNaTela) {
     this.ulPersonagens = document.querySelector("ul#personagens");
@@ -52,21 +53,23 @@ export default class PersonagemView {
         </div>
     </div>
     <div class="container-inferior">
-        <img src="./src/assets/img/icone-mana.png" class="icone-mana">
+        <img src="../dist/assets/img/icone-mana.png" class="icone-mana">
         <p class="insignia">${personagem.obterInsignia()}</p>
-        <img src="./src/assets/img/icone-vida.png" class="icone-vida">
+        <img src="../dist/assets/img/icone-vida.png" class="icone-vida">
         <h4 class="mana">${personagem.mana}</h4>
         <h4 class="vida">${personagem.vida}</h4>
     </div>
     `;
 
-    const containerLevel = personagemLI.querySelector(".level");
+    const containerLevel = personagemLI.querySelector(".level") as HTMLDivElement;
     containerLevel.onclick = (evt) => {
       evt.stopPropagation();
 
-      if (evt.target.classList.contains("diminuir-level")) personagem.diminuirLevel();
+      const target = evt.target as HTMLElement;
 
-      if (evt.target.classList.contains("aumentar-level")) personagem.aumentarLevel();
+      if (target.classList.contains("diminuir-level")) personagem.diminuirLevel();
+
+      if (target.classList.contains("aumentar-level")) personagem.aumentarLevel();
 
       this.render();
     };

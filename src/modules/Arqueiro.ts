@@ -1,11 +1,11 @@
 import Personagem from "./Personagem.js";
 
 export default class Arqueiro extends Personagem {
-  destreza;
-  static tipo = "Arqueiro";
-  static descricao = "Você tem o meu arco!";
+  destreza: number;
+  static tipo: string = "Arqueiro";
+  static descricao: string = "Você tem o meu arco!";
 
-  constructor(nome, destreza) {
+  constructor(nome: string, destreza: number) {
     super(nome, Arqueiro.tipo, Arqueiro.descricao);
     this.destreza = destreza;
   }

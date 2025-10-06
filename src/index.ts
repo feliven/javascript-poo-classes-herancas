@@ -1,21 +1,21 @@
-import Personagem from "../src/modules/Personagem.js";
-import Mago from "../src/modules/Mago.js";
-import Arqueiro from "../src/modules/Arqueiro.js";
-import ArqueiroEMago from "./js/modules/ArqueiroEMago.js";
-import Guerreiro from "./js/modules/Guerreiro.js";
-import PersonagemView from "../src/components/personagem-view.js";
+import Personagem from "./modules/Personagem.js";
+import Mago from "./modules/Mago.js";
+import Arqueiro from "./modules/Arqueiro.js";
+import ArqueiroEMago from "./modules/ArqueiroEMago.js";
+import Guerreiro from "./modules/Guerreiro.js";
+import PersonagemView from "./components/personagem-view.js";
 
 // const personagemPedrinho = new Personagem("Pedrinho", 5, "Mago");
 
-const personagemPedrinho = new Mago("Pedrinho", 5, "fogo", 4, 5);
+const personagemPedrinho = new Mago("Pedrinho", "fogo", 4, 5);
 
-const personagemJose = new Arqueiro("José", 3, 4);
+const personagemJose = new Arqueiro("José", 4);
 
-const personagemFelipe = new Mago("Felipe", 4, "gelo", 3, 2);
+const personagemFelipe = new Mago("Felipe", "gelo", 3, 2);
 
-const arqueiroBruno = new Arqueiro("Bruno", 7, 8);
+const arqueiroBruno = new Arqueiro("Bruno", 8);
 
-const arqueiroMagoThiago = new ArqueiroEMago("Thiago", 3, 3, "ar", 4, 4);
+const arqueiroMagoThiago = new ArqueiroEMago("Thiago", 3, "ar", 4, 4);
 
 const guerreiroJoao = new Guerreiro("João", 6);
 

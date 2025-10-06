@@ -1,7 +1,7 @@
-const fundo = document.getElementById("fundo-modal");
-const modal = document.getElementById("modal");
-const mensagemModal = modal.querySelector(".mensagem");
-const botaoFechar = document.getElementById("fechar-botao");
+const fundo = document.getElementById("fundo-modal") as HTMLElement;
+const modal = document.getElementById("modal") as HTMLElement;
+const mensagemModal = modal.querySelector(".mensagem") as HTMLElement;
+const botaoFechar = document.getElementById("fechar-botao") as HTMLButtonElement;
 
 const removerModal = () => {
   fundo.classList.remove("visivel");

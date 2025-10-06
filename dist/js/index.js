@@ -1,45 +1,33 @@
-import Personagem from "../src/modules/Personagem.js";
-import Mago from "../src/modules/Mago.js";
-import Arqueiro from "../src/modules/Arqueiro.js";
+import Mago from "./modules/Mago.js";
+import Arqueiro from "./modules/Arqueiro.js";
 import ArqueiroEMago from "./modules/ArqueiroEMago.js";
 import Guerreiro from "./modules/Guerreiro.js";
-import PersonagemView from "../src/components/personagem-view.js";
-
+import PersonagemView from "./components/personagem-view.js";
 // const personagemPedrinho = new Personagem("Pedrinho", 5, "Mago");
-
-const personagemPedrinho = new Mago("Pedrinho", 5, "fogo", 4, 5);
-
-const personagemJose = new Arqueiro("José", 3, 4);
-
-const personagemFelipe = new Mago("Felipe", 4, "gelo", 3, 2);
-
-const arqueiroBruno = new Arqueiro("Bruno", 7, 8);
-
-const arqueiroMagoThiago = new ArqueiroEMago("Thiago", 3, 3, "ar", 4, 4);
-
+const personagemPedrinho = new Mago("Pedrinho", "fogo", 4, 5);
+const personagemJose = new Arqueiro("José", 4);
+const personagemFelipe = new Mago("Felipe", "gelo", 3, 2);
+const arqueiroBruno = new Arqueiro("Bruno", 8);
+const arqueiroMagoThiago = new ArqueiroEMago("Thiago", 3, "ar", 4, 4);
 const guerreiroJoao = new Guerreiro("João", 6);
-
 console.log(personagemPedrinho);
 console.log(personagemJose);
 console.log(personagemFelipe);
 console.log(arqueiroBruno);
 console.log(arqueiroMagoThiago);
 console.log(guerreiroJoao);
-
 console.log(`Insígnia de ` + personagemPedrinho.nome + `: ` + personagemPedrinho.obterInsignia());
 console.log(`Insígnia de ` + personagemJose.nome + `: ` + personagemJose.obterInsignia());
 console.log(`Insígnia de ` + personagemFelipe.nome + `: ` + personagemFelipe.obterInsignia());
 console.log(`Insígnia de ` + arqueiroBruno.nome + `: ` + arqueiroBruno.obterInsignia());
 console.log(`Insígnia de ` + arqueiroMagoThiago.nome + `: ` + arqueiroMagoThiago.obterInsignia());
 console.log(`Insígnia de ` + guerreiroJoao.nome + `: ` + guerreiroJoao.obterInsignia());
-
 const personagensExibidosNaTela = [
-  personagemPedrinho,
-  personagemJose,
-  personagemFelipe,
-  arqueiroBruno,
-  arqueiroMagoThiago,
-  guerreiroJoao,
+    personagemPedrinho,
+    personagemJose,
+    personagemFelipe,
+    arqueiroBruno,
+    arqueiroMagoThiago,
+    guerreiroJoao,
 ];
-
 new PersonagemView(personagensExibidosNaTela).render();
