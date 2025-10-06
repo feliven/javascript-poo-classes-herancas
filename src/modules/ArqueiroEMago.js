@@ -8,10 +8,10 @@ export default class ArqueiroEMago extends Personagem {
   elementoMagico;
   levelMagico;
   inteligencia;
-  tipo = "ArqueiroMago";
+  static tipo = "ArqueiroMago";
 
   constructor(nome, level, destreza, elementoMagico, levelMagico, inteligencia) {
-    super(nome, level, "ArqueiroMago");
+    super(nome, level, ArqueiroEMago.tipo);
     this.ladoArqueiro = new Arqueiro(nome, level, destreza);
     this.ladoMago = new Mago(nome, level, elementoMagico, levelMagico, inteligencia);
   }

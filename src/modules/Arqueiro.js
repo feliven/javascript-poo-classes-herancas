@@ -2,10 +2,10 @@ import Personagem from "./Personagem.js";
 
 export default class Arqueiro extends Personagem {
   destreza;
-  tipo = "Arqueiro";
+  static tipo = "Arqueiro";
 
   constructor(nome, level, destreza) {
-    super(nome, level, "Arqueiro");
+    super(nome, level, Arqueiro.tipo);
     this.destreza = destreza;
   }
 

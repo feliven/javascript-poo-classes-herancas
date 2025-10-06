@@ -1,4 +1,4 @@
-import Personagem from "../src/modules/Personagem.js";
+// import Personagem from "../src/modules/Personagem.js";
 import Mago from "../src/modules/Mago.js";
 import Arqueiro from "../src/modules/Arqueiro.js";
 import ArqueiroEMago from "./modules/ArqueiroEMago.js";
@@ -8,7 +8,7 @@ import PersonagemView from "../src/components/personagem-view.js";
 
 const personagemPedrinho = new Mago("Pedrinho", 5, "fogo", 4, 5);
 
-const personagemJose = new Personagem("José", 3, "Arqueiro");
+const personagemJose = new Arqueiro("José", 3, 4);
 
 const personagemFelipe = new Mago("Felipe", 4, "gelo", 3, 2);
 
