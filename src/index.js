@@ -1,15 +1,14 @@
-const personagemPedrinho = {
-  nome: "Pedrinho",
-  vida: 7,
-  mana: 12,
-  level: 5,
-  tipo: "Mago",
-};
+import Personagem from "../src/modules/Personagem.js";
 
-const personagemJose = {
-  nome: "Jose",
-  vida: 7,
-  mana: 6,
-  level: 3,
-  tipo: "Arqueiro",
-};
+const personagemPedrinho = new Personagem("Pedrinho", 7, 12, 5, "Mago");
+
+const personagemJose = new Personagem("Jose", 7, 6, 3, "Arqueiro");
+
+const personagemFelipe = new Personagem("Felipe", 8, 10, 5, "Mago");
+
+console.log(personagemPedrinho);
+console.log(personagemJose);
+console.log(personagemFelipe);
+
+console.log(`Insígnia de ` + personagemPedrinho.nome + `: ` + personagemPedrinho.obterInsignia());
+console.log(`Insígnia de ` + personagemJose.nome + `: ` + personagemJose.obterInsignia());
