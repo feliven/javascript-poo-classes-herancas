@@ -6,7 +6,7 @@ export default class PersonagemView {
   personagensSelecionados: Personagem[];
   ulPersonagens: HTMLUListElement;
 
-  constructor(personagensExibidosNaTela) {
+  constructor(personagensExibidosNaTela: Personagem[]) {
     this.ulPersonagens = document.querySelector("ul#personagens");
     this.personagensExibidosNaTela = personagensExibidosNaTela;
     this.personagensSelecionados = [];
@@ -21,9 +21,9 @@ export default class PersonagemView {
     });
   }
 
-  criaPersonagem = (personagem) => {
-    const personagemLI = document.createElement("li");
-    personagemLI.classList.add("personagem", personagem.constructor.tipo);
+  criaPersonagem = (personagem: Personagem) => {
+    const personagemLI = document.createElement("li") as HTMLLIElement;
+    personagemLI.classList.add("personagem", personagem.tipo);
 
     const estaSelecionado = this.personagensSelecionados.indexOf(personagem) !== -1; //sintaxe para quando encontra no array
 
@@ -35,21 +35,21 @@ export default class PersonagemView {
             <div class="combate"></div>
             <div class="level">
                 <button class="diminuir-level">-</button>
-                <p class="level-texto">Level ${personagem.level}</p>
+                <p class="level-texto">Level ${personagem.getLevel()}</p>
                 <button class="aumentar-level">+</button>
             </div>
         </div>
         <div class="container-imagem">
             <div class="imagem"></div>
             <div class="container-tipo">
-                <h2 class="tipo">${personagem.constructor.tipo}</h2>
+                <h2 class="tipo">${personagem.tipo}</h2>
             </div>
         </div>
         <div class="container-nome">
             <h3 class="nome">${personagem.nome}</h3>
         </div>
         <div class="container-descricao">
-            <p class="descricao">${personagem.constructor.descricao}</p>
+            <p class="descricao">${personagem.descricao}</p>
         </div>
     </div>
     <div class="container-inferior">
@@ -87,19 +87,19 @@ export default class PersonagemView {
     return personagemLI;
   };
 
-  adicionaSelecao = (personagem) => {
+  adicionaSelecao = (personagem: Personagem) => {
     this.personagensSelecionados.push(personagem);
     this.render();
   };
 
-  removeSelecao = (personagem) => {
+  removeSelecao = (personagem: Personagem) => {
     const indexDoPersonagemNoArray = this.personagensSelecionados.indexOf(personagem);
     this.personagensSelecionados.splice(indexDoPersonagemNoArray, 1);
     this.render();
   };
 
   escutarEventoDuelo() {
-    const botaoDuelar = document.querySelector(".botao-duelar");
+    const botaoDuelar = document.querySelector(".botao-duelar") as HTMLButtonElement;
 
     botaoDuelar.addEventListener("click", () => {
       if (this.personagensSelecionados.length < 2) return mostrarModal("Selecione 2 personagens");

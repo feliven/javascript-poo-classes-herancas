@@ -3,49 +3,49 @@ export default class Personagem {
   vida: number = 100;
   mana: number = 100;
   protected level: number;
-  static tipo: string;
-  static descricao: string;
+  tipo: string;
+  descricao: string;
 
-  constructor(nome, tipo, descricao) {
+  constructor(nome: string, tipo: string, descricao: string) {
     this.nome = nome;
     this.level = 1;
-    Personagem.tipo = tipo;
-    Personagem.descricao = descricao;
+    this.tipo = tipo;
+    this.descricao = descricao;
   }
 
-  aumentarLevel() {
+  aumentarLevel(): void {
     this.level += 1;
     // Para chamarmos o método set level(), a chamada precisa ter o mesmo nome da função — ou seja, level - por isso retiramos o sinal # dos métodos.
   }
 
-  diminuirLevel() {
+  diminuirLevel(): void {
     this.level -= 1;
   }
 
-  setLevel(novoLevel) {
+  setLevel(novoLevel: number): void {
     if (novoLevel >= 1 && novoLevel <= 10) {
       this.level = novoLevel;
     }
   }
 
-  getLevel() {
+  getLevel(): number {
     return this.level;
   }
 
-  obterInsignia() {
+  obterInsignia(): string {
     if (this.level >= 5) {
-      return `Implacável ${Personagem.tipo}`;
+      return `Implacável ${this.tipo}`;
     }
-    return `${Personagem.tipo} iniciante`;
+    return `${this.tipo} iniciante`;
   }
 
-  static verificarVencedor(personagem1, personagem2) {
+  static verificarVencedor(personagem1: Personagem, personagem2: Personagem): string {
     if (personagem1.level === personagem2.level) {
       return "Empate!";
     }
     if (personagem1.level > personagem2.level) {
-      return `${personagem1.constructor.tipo} ${personagem1.nome} ganhou!`;
+      return `${personagem1.tipo} ${personagem1.nome} ganhou!`;
     }
-    return `${personagem2.constructor.tipo} ${personagem2.nome} ganhou!`;
+    return `${personagem2.tipo} ${personagem2.nome} ganhou!`;
   }
 }

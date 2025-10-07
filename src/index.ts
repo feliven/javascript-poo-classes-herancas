@@ -7,17 +7,17 @@ import PersonagemView from "./components/personagem-view.js";
 
 // const personagemPedrinho = new Personagem("Pedrinho", 5, "Mago");
 
-const personagemPedrinho = new Mago("Pedrinho", "fogo", 4, 5);
+const personagemPedrinho: Personagem = new Mago("Pedrinho", "fogo", 4, 5);
 
-const personagemJose = new Arqueiro("José", 4);
+const personagemJose: Personagem = new Arqueiro("José", 4);
 
-const personagemFelipe = new Mago("Felipe", "gelo", 3, 2);
+const personagemFelipe: Personagem = new Mago("Felipe", "gelo", 3, 2);
 
-const arqueiroBruno = new Arqueiro("Bruno", 8);
+const arqueiroBruno: Personagem = new Arqueiro("Bruno", 8);
 
-const arqueiroMagoThiago = new ArqueiroEMago("Thiago", 3, "ar", 4, 4);
+const arqueiroMagoThiago: Personagem = new ArqueiroEMago("Thiago", 3, "ar", 4, 4);
 
-const guerreiroJoao = new Guerreiro("João", 6);
+const guerreiroJoao: Personagem = new Guerreiro("João", 6);
 
 console.log(personagemPedrinho);
 console.log(personagemJose);
@@ -33,7 +33,7 @@ console.log(`Insígnia de ` + arqueiroBruno.nome + `: ` + arqueiroBruno.obterIns
 console.log(`Insígnia de ` + arqueiroMagoThiago.nome + `: ` + arqueiroMagoThiago.obterInsignia());
 console.log(`Insígnia de ` + guerreiroJoao.nome + `: ` + guerreiroJoao.obterInsignia());
 
-const personagensExibidosNaTela = [
+const personagensExibidosNaTela: Personagem[] = [
   personagemPedrinho,
   personagemJose,
   personagemFelipe,
